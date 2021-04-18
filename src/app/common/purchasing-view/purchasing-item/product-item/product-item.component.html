@@ -1,0 +1,11 @@
+<figure class="itemside mb-3">
+    <div class="aside"></div>
+    <figcaption class="info align-self-center">
+
+        <p class="title">{{product.name}}</p>
+        <p>{{product.description}}</p>
+        <span>Price: </span><span class="text-muted">{{product.price}} €</span>
+    </figcaption>
+    <a [routerLink]="['/article/'+product.id]"  class="btn btn-outline-secondary">Details</a>
+
+</figure>

@@ -1,0 +1,10 @@
+<!--<td><img src="{{}}" alt="article name here"/></td>-->
+
+<td><img src="{{mediaUrl$ | async}}" alt="image"></td>
+<td>{{product.name}}</td>
+<td>{{product.description}}</td>
+<td>{{product.category.name}}</td>
+<td><img *ngFor="let i of [].constructor(product.rating)" alt="*" src="assets/icons/star.svg"/>
+</td>
+
+<td>{{product.price}} €</td>

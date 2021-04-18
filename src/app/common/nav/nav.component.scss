@@ -1,0 +1,41 @@
+
+.profile {
+    svg {
+        margin-top: -3px;
+        margin-right: 3px;
+    }
+}
+
+.icon-signout {
+
+    padding: 5px;
+    box-sizing: content-box;
+    border-radius: 50%;
+    background-color: var(--secondary);
+    stroke: var(--primary);
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.basket {
+    svg {
+        padding: 5px;
+        box-sizing: content-box;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 1);
+        stroke: var(--primary);
+        transition: 200ms;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+}
+
+.nav{
+    &__signout{
+        margin-left: .5rem;
+    }
+}

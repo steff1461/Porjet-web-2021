@@ -1,0 +1,19 @@
+<div class="be-comment" *ngIf="comment">
+    <div class="be-img-comment">
+            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="be-ava-comment">
+    </div>
+    <div class="be-comment-content" *ngIf="user$ | async as user">
+
+				<span class="be-comment-name">
+					{{user.firstname + " " + user.lastname}}
+					</span>
+        <span class="be-comment-time">
+					<i class="fa fa-clock-o"></i>
+            {{convertDate(comment.createdAt)}}
+				</span>
+
+        <p class="be-comment-text">
+            {{comment.content}}
+        </p>
+    </div>
+</div>

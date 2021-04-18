@@ -1,0 +1,13 @@
+
+<div *ngIf="isLoaded">
+
+    <div class="container">
+        <article class="card">
+            <header class="card-header"> My Orders / Tracking</header>
+
+            <app-purchasing-item
+                *ngFor="let purchasing of purchasingBS | async" [purchasing]="purchasing"></app-purchasing-item>
+
+        </article>
+    </div>
+</div>

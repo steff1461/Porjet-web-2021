@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&family=Rubik&display=swap');
+
+$font-primary: 'Rubik', sans-serif;
+$font-secondary: 'Roboto Slab', serif;
+
+$theme-color-primary: orange;
+$theme-color-secondary: red;
+$theme-color-bright: snow;
+$theme-color-dark: black;
+
+
+$primary: #78c2ad;
+$secondary: #f3969a;
+$success: #56cc9d;
+$info: #6cc3d5;
+$warning: #ffce67;
+$danger: #ff7851;
+
+// Based on a visual scale of 1.250
+// Starts at 16 px.
+
+$size-l4: 0.41rem;
+$size-l3: 0.512rem;
+$size-l2: 0.64rem;
+$size-l1: 0.8rem;
+$size: 1rem;
+$size1: 1.25rem;;
+$size2: 1.563rem;
+$size-3: 1.953rem;
+$size-4: 2.441rem;
+$size-5: 3.052rem;

@@ -1,0 +1,23 @@
+.row {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.counter{
+    button{
+        background-color: var(--secondary);
+        color: #FFF;
+        width: 30px;
+        height: 30px;
+        border: none;
+        border-radius: 50%;
+        transition: 200ms ease;
+        &:hover{
+            background-color: var(--primary);
+        }
+    }
+
+    .count{
+        padding: 0 10px;
+    }
+}

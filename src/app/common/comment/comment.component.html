@@ -1,0 +1,27 @@
+<div class="container">
+
+    <div  *ngFor=" let comment of comments$ | async">
+        <app-single-comment [comment]="comment">
+        </app-single-comment>
+    </div>
+
+
+    <div class="be-comment-block">
+        <h1 class="comments-title">Comments</h1>
+
+        <form class="form-block" (ngSubmit)="postComment()" [formGroup]="form">
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="comment-input"></label>
+                            <textarea id="comment-input" class="form-input" required="" placeholder="Your comment" formControlName="content"
+                            ></textarea>
+
+                    </div>
+                </div>
+                <button class="btn btn-secondary pull-right be-btn">submit</button>
+            </div>
+        </form>
+    </div>
+</div>

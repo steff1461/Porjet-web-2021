@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">Easy climbing</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/home']" routerLinkActive="active">Home
+                    <!--                    <span class="sr-only">(current)</span>-->
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/new']" routerLinkActive="active">New arrivals</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/contact']" routerLinkActive="active">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/conditions']" routerLinkActive="active">About us</a>
+            </li>
+        </ul>
+
+        <a [routerLink]="['/profile']" routerLinkActive="active" class="btn btn-secondary profile">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="20" height="20"
+                 viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" fill="none" stroke-linecap="round"
+                 stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <circle cx="12" cy="7" r="4"/>
+                <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"/>
+            </svg>
+
+            <span *ngIf="authService.isLogged">
+                   <span *ngIf="authService.basicUser$ | async as basicUser">
+                {{basicUser.firstname + ' ' + basicUser.lastname }}</span>
+            </span>
+        </a>
+
+
+        <button *ngIf="authService.isLogged" (click)="authService.signOut()" class="btn btn-secondary nav__signout">
+            Sign out
+        </button>
+
+
+        <a [routerLink]="['/basket']" routerLinkActive="active" class="btn basket">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-basket" width="30" height="30"
+                 viewBox="0 0 24 24" stroke-width="1" stroke="#fff" fill="none" stroke-linecap="round"
+                 stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <polyline points="7 10 12 4 17 10"/>
+                <path d="M21 10l-2 8a2 2.5 0 0 1 -2 2h-10a2 2.5 0 0 1 -2 -2l-2 -8z"/>
+                <circle cx="12" cy="15" r="2"/>
+            </svg>
+        </a>
+    </div>
+</nav>

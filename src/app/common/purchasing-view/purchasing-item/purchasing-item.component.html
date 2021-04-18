@@ -1,0 +1,42 @@
+
+        <div class="card-body">
+            <h6>Order ID: OD45345345435</h6>
+            <h6>Order date: {{purchasing.createdAt.split('T')[0]}}</h6>
+            <article class="card">
+                <div class="card-body row">
+                    <div class="col"><strong>Estimated Delivery time:</strong> <br>29 may 2021</div>
+                    <div class="col"><strong>Shipping BY:</strong> <br> BLUEDART, | <i class="fa fa-phone"></i>
+                        +32497124578
+                    </div>
+                    <div class="col"><strong>Status:</strong> <br> Picked by the courier</div>
+                    <div class="col"><strong>Tracking #:</strong> <br> BD045903594059</div>
+                </div>
+            </article>
+            <div class="track">
+                <div class="step active"><span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Order confirmed</span>
+                </div>
+                <div class="step active"><span class="icon"> <i class="fa fa-user"></i> </span> <span class="text"> Picked by courier</span>
+                </div>
+                <div class="step"><span class="icon"> <i class="fa fa-truck"></i> </span> <span
+                    class="text"> On the way </span></div>
+                <div class="step"><span class="icon"> <i class="fa fa-box"></i> </span> <span class="text">Ready for pickup</span>
+                </div>
+            </div>
+            <hr>
+            <ul class="row" *ngFor="let productId of purchasing.productsId">
+
+                <li>
+                    <app-product-item [productId]=productId></app-product-item>
+                </li>
+
+                <li class="col-md-4">
+                </li>
+            </ul>
+            <hr>
+            <a class="btn btn-secondary" data-abc="true" (click)="deleteOrder()"> <i class="fa fa-trash-alt"></i>Cancel order</a>
+            <hr>
+        </div>
+
+
+
+

@@ -1,0 +1,19 @@
+<div class="row border-top border-bottom">
+    <div class="row main align-items-center">
+        <div class="col-2">
+            <img class="img-fluid" src="{{mediaUrl$ | async}}" alt="image"></div>
+        <div class="col">
+            <div class="row text-muted"><p>{{basketItem.product.name}}</p></div>
+        <div class="col counter">
+            <button (click)="changeCount('-')">-</button>
+            <span class="count">{{basketItem.productCount}}</span>
+            <button (click)="changeCount('+')">+</button>
+        </div>
+        <div class="col">&euro; {{basketItem.product.price}}
+            <button (click)="removeFromBasket()" class="close">&#10005;</button>
+        </div>
+    </div>
+</div>
+
+
+</div>

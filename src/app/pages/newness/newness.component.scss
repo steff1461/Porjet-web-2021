@@ -1,0 +1,36 @@
+.newness{
+    &__heading{
+        display: flex;
+        align-items: center;
+    }
+
+    &__image{
+        width: 40%;
+        margin-right: 5%;
+        img{
+            max-width: 100%;
+        }
+    }
+
+    &__text{
+        width: 55%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .newness {
+        &__heading {
+            flex-direction: column;
+        }
+
+        &__image{
+            width: 100%;
+            margin-right: 0;
+        }
+
+        &__text{
+            width: 100%;
+        }
+
+    }
+}

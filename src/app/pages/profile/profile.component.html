@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-10 col-xl-8 mx-auto">
+            <h2 class="h3 mb-4 page-title">Your profile</h2>
+            <div class="my-4">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" [class.inactive]="!profileForm">
+                        <a class="nav-link active" id="home-ta" data-toggle="tab" href="#" role="tab"
+                           aria-controls="home" (click)="displayProfile()">Profile</a>
+                    </li>
+                    <li class="nav-item" [class.inactive]="!orderView">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#" role="tab"
+                           aria-controls="home" (click)="displayOrders()">Your orders</a>
+                    </li>
+                    <li class="nav-item" [class.inactive]="!adminPanel"
+                        *ngIf="(user$ | async).roles.includes('ROLE_ADMIN')">
+                        <a class="nav-link active" id="home-t" data-toggle="tab" href="#" role="tab"
+                           aria-controls="home" (click)="displayAdmin()">Admin panel</a>
+                    </li>
+                </ul>
+                <div class="whitebox">
+                    <app-profile-form *ngIf="profileForm" [user$]=" user$" [address$]="address$"></app-profile-form>
+                    <app-purchasing-view *ngIf="orderView"></app-purchasing-view>
+                    <app-admin-panel *ngIf="adminPanel"></app-admin-panel>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>

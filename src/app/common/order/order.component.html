@@ -1,0 +1,20 @@
+<div *ngIf="basketItems$ | async as basketItems">
+    <div *ngFor=" let basketItem of basketItems">
+        <app-basket-item [basketItem]="basketItem"></app-basket-item>
+    </div>
+</div>
+
+<div *ngIf="user$ | async as user">
+    <h5>Please verify your personal informations:</h5>
+    <p>Name: {{user.lastname}}</p>
+    <p>Firstname: {{user.firstname}}</p>
+
+    <div *ngIf=" address$ | async as address">
+        <p>Street: {{address.street}}</p>
+        <p>City: {{address.postalCode}} {{address.city}}</p>
+        <p>Country: {{address.country}}</p>
+    </div>
+
+</div>
+
+
