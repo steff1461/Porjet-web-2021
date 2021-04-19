@@ -32,6 +32,7 @@ import { ProductItemComponent } from './common/purchasing-view/purchasing-item/p
 import { ProductFormComponent } from './common/product-form/product-form.component';
 import { AdminPanelComponent } from './common/admin-panel/admin-panel.component';
 import { CategoryFormComponent } from './common/category-form/category-form.component';
+import {ContactComponent} from './pages/contact/contact.component';
 
 
 @NgModule({
@@ -59,7 +60,8 @@ import { CategoryFormComponent } from './common/category-form/category-form.comp
         ProductItemComponent,
         ProductFormComponent,
         AdminPanelComponent,
-        CategoryFormComponent
+        CategoryFormComponent,
+        ContactComponent
     ],
     imports: [
         BrowserModule,

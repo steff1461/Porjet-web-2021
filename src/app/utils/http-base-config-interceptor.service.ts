@@ -5,13 +5,15 @@ import {
     HttpEvent,
     HttpInterceptor
 } from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {Observable, throwError} from 'rxjs';
 import {Token} from '../models/dto/Token';
+import {catchError} from 'rxjs/operators';
+import {AuthenticationService} from '../services/authentication.service';
 
 @Injectable()
 export class HttpBaseConfigInterceptor implements HttpInterceptor {
 
-    constructor() {
+    constructor(private authService: AuthenticationService) {
 
     }
 
@@ -31,7 +33,16 @@ export class HttpBaseConfigInterceptor implements HttpInterceptor {
 
         request = request.clone({headers: request.headers.set('Accept', 'application/json')});
 
-        return next.handle(request);
+        return next.handle(request).pipe(catchError(err => {
+
+            if ([401, 403].includes(err.status) && this.authService.isLogged) {
+
+                this.authService.signOut();
+            }
+            const error = (err && err.error && err.error.message) || err.statusText;
+            console.error(err);
+            return throwError(error);
+        }));
 
     }
 }
