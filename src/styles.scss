@@ -75,7 +75,10 @@ h5 {font-size: 1.25rem;}
 
 small, .text_small {font-size: 0.8rem;}
 
-button{
+.btn{
 
     background-color: var(--secondary)!important;
+    border-color: var(--secondary)!important;
+    color: whitesmoke!important;
+
 }
