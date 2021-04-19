@@ -48,8 +48,10 @@ export class ShopComponent implements OnInit {
 
         if (this.selected === 'ALL') {
             this.findAllProducts();
+            this.computePagination();
         } else {
             this.productService.findProductsByCategory(Number(this.selected), '1').subscribe(item => this.productsBS.next(item));
+            this.computePagination();
         }
     }
 
@@ -71,7 +73,6 @@ export class ShopComponent implements OnInit {
                 } else {
                     this.productCountBS.next(Math.ceil(pageCount));
                 }
-                console.log(this.productCountBS.value);
             }
         );
     }
